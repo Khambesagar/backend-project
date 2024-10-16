@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #012242;
+            color: #ecf0f1;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Container for Update Form */
+        .update-container {
+            background: linear-gradient(rgba(156, 26, 231, 0.9), rgba(23, 173, 233, 0.9));
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Header Styles */
+        .update-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Input Fields */
+        .update-container input[type="text"],
+        .update-container input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #7f8c8d;
+            border-radius: 5px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        /* Submit Button */
+        .update-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e67e22;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hover Effect for Button */
+        .update-container button:hover {
+            background-color: #d35400;
+        }
+
+        /* Back to Dashboard Link */
+        .update-container .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #ecf0f1;
+        }
+
+        .update-container .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="update-container">
+        <h1>Update User</h1>
+        <form action="/update/<%= user._id %>" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<%= user.name %>">
+            <br>
+            <label for="position">Position:</label>
+            <input type="text" name="position" id="power" value="<%= user.position %>">
+
+            <label for="salary">Salary:</label>
+            <input type="number" name="salary" id="age" value="<%= user.salary %>">
+            <br>
+            <br>
+            <button type="submit" onclick="updatedata()">Update</button>
+        </form>
+        <a href="/dashboard" class="back-link">Back to Dashboard</a>
+    </div>
+    <script>
+        function updatedata() {
+            alert('Successfully updated data');
+           
+        }
+    </script>
+</body>
+
+</html>

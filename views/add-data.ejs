@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(156, 26, 231, 0.9), rgba(23, 173, 233, 0.9));
+            color: #ecf0f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        .form-container {
+            background-color: #03274b;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px black;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+       @keyframes fadeIn{
+        from{
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+       }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #21b2bd;
+            border-radius: 5px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #2ecc71;
+        }
+
+        .form-container .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #ecf0f1;
+        }
+
+        .form-container .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Add New User</h1>
+        <form action="/add" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="position" placeholder="Position" required>
+            <input type="number" name="salary" placeholder="Salary" required>
+
+            <button type="submit" onclick="addnewdata()">Add User</button>
+        </form>
+        <a href="/dashboard" class="back-link" >Back to Dashboard</a>
+    </div>
+    <script>
+        function addnewdata() {
+            alert('Successfully New data added');
+           
+        }
+    </script>
+</body>
+
+</html>
